@@ -11,6 +11,7 @@ const Book2 = resolve => require(['../views/book2/book2.vue'], resolve)
 const About = resolve => require(['../views/about/about.vue'], resolve)
 
 export default new Router({
+  mode: 'history',//使用history模式，去掉url中自带的井号。
   routes: [
     {
       path: '/',
