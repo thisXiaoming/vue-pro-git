@@ -1,0 +1,49 @@
+<template>
+  <div class="hello">
+    <h1>welcome to My Vue Issues</h1>
+    <h2></h2>
+    <ul class="chapter-container">
+      <li>
+        <router-link :to="{name:'Home'}">Home</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'About'}">About</router-link>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="less" scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #42b983;
+}
+.chapter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+</style>
