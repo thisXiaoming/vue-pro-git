@@ -29,7 +29,7 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-##过程中涉及到的问题
+## 过程中涉及到的问题
 ### 使用less步骤
 1. 在build\webpack.base.conf.js加入less-loader的配置
 ```
