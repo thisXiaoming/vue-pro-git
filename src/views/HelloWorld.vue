@@ -7,7 +7,7 @@
         <router-link :to="{name:'VueRouterPage'}">第一章  vue-router的简单配置例</router-link>
       </li>
       <li>
-        <router-link :to="{name:'About'}">第二章  flex布局例</router-link>
+        <router-link :to="{name:'flexEg'}">第二章  flex布局例</router-link>
       </li>
     </ul>
   </div>
