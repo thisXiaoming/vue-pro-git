@@ -7,9 +7,9 @@ import HelloWorld from '@/views/HelloWorld'
 Vue.use(Router)
 
 let routerPath = '/myFirstCli'
-const Home = resolve => require(['../views/home/home.vue'], resolve)
-const Book1 = resolve => require(['../views/book1/book1.vue'], resolve)
-const Book2 = resolve => require(['../views/book2/book2.vue'], resolve)
+const VueRouterPage = resolve => require(['../views/vue-router-eg/vue-router-eg.vue'], resolve)
+const Book1 = resolve => require(['../views/vue-router-eg/book1/book1.vue'], resolve)
+const Book2 = resolve => require(['../views/vue-router-eg/book2/book2.vue'], resolve)
 const About = resolve => require(['../views/about/about.vue'], resolve)
 
 export default new Router({
@@ -21,9 +21,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/home',
-      component: Home,
-      name: 'Home',
+      path: '/vue-router-eg',
+      component: VueRouterPage,
+      name: 'VueRouterPage',
       children: [
         {
           name: 'Book1',

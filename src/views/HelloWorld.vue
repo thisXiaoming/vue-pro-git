@@ -4,10 +4,10 @@
     <h2></h2>
     <ul class="chapter-container">
       <li>
-        <router-link :to="{name:'Home'}">Home</router-link>
+        <router-link :to="{name:'VueRouterPage'}">第一章  vue-router的简单配置例</router-link>
       </li>
       <li>
-        <router-link :to="{name:'About'}">About</router-link>
+        <router-link :to="{name:'About'}">第二章  flex布局例</router-link>
       </li>
     </ul>
   </div>
@@ -43,7 +43,7 @@ a {
   align-items: center;
   li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 5px 10px;
   }
 }
 </style>
