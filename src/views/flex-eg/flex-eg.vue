@@ -89,7 +89,7 @@
         align-items: flex-start;
         .train-num {
             // line-height: 1.4;
-            margin-right: 10px;
+            margin-right: 1this0px;
             span {
                 vertical-align: middle;
             }
