@@ -6,34 +6,36 @@
             </div>
             <div class="middle-container">
                 <div class="train-num"><span>G112</span></div>
-                <div class="dep-info">
-                    <div class="dep-station">
-                        <div class="dep-type"><span>始</span></div>
-                        <div class="dep-station">北京西</div>     
+                <div class="trip-info">
+                    <div class="trip-station">
+                        <div class="trip-type"><span>始</span></div>
+                        <div class="trip-station-name">北京西</div>     
                     </div>
-                    <div class="dep-time">08:30</div>
+                    <div class="trip-time">08:30</div>
                 </div>
                 <div class="cross-info">
                     <div class="cross-img"></div>
-                    <div class="cross-arrow"></div>
+                    <div class="cross-arrow">
+                        <i></i><i></i>
+                    </div>
                     <div class="cross-time">4小时8分钟</div>
                 </div>
-                <div class="arr-info">
-                    <div class="arr-station">
-                        <div class="arr-type">过</div>
-                        <div class="arr-station">西安</div>     
+                <div class="trip-info">
+                    <div class="trip-station">
+                        <div class="trip-type"><span>过</span></div>
+                        <div class="trip-station-name">西安</div>     
                     </div>
-                    <div class="arr-time">18:30</div>
+                    <div class="trip-time">18:30</div>
                 </div>
             </div>
             <div class="bottom-container">
-                <div class="seat-type">商务</div>
-                <div class="seat-type">一等</div>
-                <div class="seat-type">二等</div>
-                <div class="seat-type">软卧</div>
-                <div class="seat-type">硬卧</div> 
-                <div class="seat-type">硬座</div>
-                <div class="seat-type">无座</div>                                                                                                           
+                <div class="seat-type">商务: 142张</div>
+                <div class="seat-type">一等: 142张</div>
+                <div class="seat-type">二等: 142张</div>
+                <div class="seat-type">软卧: 142张</div>
+                <div class="seat-type">硬卧: 142张</div> 
+                <div class="seat-type">硬座: 142张</div>
+                <div class="seat-type">无座: 142张</div>                                                                                                           
             </div>
             <div class="remind-info">暂售至08月17号</div>
         </div>
@@ -73,10 +75,6 @@
         background-color: #ddd;
     }
 
-    .middle-container, .bottom-container{
-        display: flex;
-    }
-
     .top-container {
         .top-remind {
             margin-bottom: 5px;
@@ -86,31 +84,71 @@
     }
 
     .middle-container {
-        align-items: flex-start;
+        display: flex;
+        align-items: center;
+        margin: 10px 20px;
         .train-num {
+            align-self: flex-start;
             // line-height: 1.4;
-            margin-right: 1this0px;
+            margin-right: 20px;
             span {
+                font-size: 20px;/*!px*/
                 vertical-align: middle;
             }
         }
-        .dep-info {
-            .dep-station {
+        .trip-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .trip-station {
                 display: flex; 
-                .dep-type {
-                    width: 16px;
-                    height: 16px;
-                    line-height: 16px;
+                align-items: center;
+                .trip-type {
+                    width: 28px;
+                    height: 28px;
+                    line-height: 28px;
+                    margin-right: 5px;
                     text-align: center;
+                    border: 1px solid #22ba66;
                     border-radius: 3px;
                     background-color: #22ba66;
                     span {
-                        font-size: 12px;
+                        font-size: 10px;/*!px*/
                         color: #fff;
                     }
                 } 
-                .dep-station {
-                    font-size: 12px;
+                .trip-station-name {
+                    font-size: 20px;/*!px*/
+                }
+            }
+            .trip-time {
+                margin-top: 10px;
+                font-size: 16px;/*!px*/
+            }
+        }
+        .cross-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 220px;
+            margin: 0 20px;
+            .cross-arrow {
+                display: flex;
+                position: relative;
+                width: 100%;
+                i {
+                    display: block;
+                    flex: 1;
+                    border-bottom: thin solid #999;                  
+                }
+                i:last-child :after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    border-style: solid;
+                    border-color: transparent transparent transparent #999;
                 }
             }
         }
@@ -120,6 +158,25 @@
                 display: flex;
             }
         }
+    }
+
+    .bottom-container {
+        /* width: 100%; */
+        display: flex;
+        align-items: center;
+        flex: 1;
+        flex-wrap: wrap;
+        /* justify-content: space-around; */
+        margin: 0 20px;
+        .seat-type {
+            margin: 0 20px 5px 0;
+        }
+    }
+
+    .remind-info {
+        margin-top: 5px;
+        font-size: 12px;/*!px*/
+        color: #22ba66;
     }
 </style>
 
