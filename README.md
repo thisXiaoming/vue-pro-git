@@ -57,3 +57,5 @@ npm install less less-loader --save-dev
     }
 </style>
 ```
+### 谷歌浏览器不支持12px以下的文字大小
+1. 做到这里发现谷歌浏览器不支持12px以下的文字大小，目前看到好多的论坛都是用transform-scale处理的，但这个不是我想要的方式，初步还是想订用rem，目前正在探索中。。。。。。
