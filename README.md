@@ -77,3 +77,4 @@ require('postcss-px2rem')({
 })
 ]
 ```
+参考: [postcss-px2rem安装配置](https://www.npmjs.com/package/postcss-px2rem)
