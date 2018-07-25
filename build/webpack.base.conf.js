@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+// const px2rem = require('postcss-px2rem');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -64,6 +65,10 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
+      // {
+      //   test: /\.css$/,
+      //   loader: "style-loader!css-loader!postcss-loader"
+      // },
       {
         test: /\.less$/,
         use: [
@@ -72,7 +77,11 @@ module.exports = {
           'less-loader'
         ]
       }
-    ]
+    ],
+    // postcss: function() {
+    //   return [px2rem({remUnit: 75})];
+    // }
+
   },
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue

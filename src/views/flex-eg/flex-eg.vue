@@ -80,7 +80,7 @@
     .top-container {
         .top-remind {
             margin-bottom: 5px;
-            font-size: 12px;
+            font-size: 12px;/*!px*/
             color: #ff6633;
         }
     }
