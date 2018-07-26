@@ -78,4 +78,5 @@ require('postcss-px2rem')({
 ]
 ```
 原理解释： [rem原理](https://www.cnblogs.com/this-xiaoming/p/9056607.html)
-参考: [postcss-px2rem安装配置](https://www.npmjs.com/package/postcss-px2rem)
+
+配置参考: [postcss-px2rem安装配置](https://www.npmjs.com/package/postcss-px2rem)

@@ -9,6 +9,9 @@
       <li>
         <router-link :to="{name:'flexEg'}">第二章  flex布局例</router-link>
       </li>
+      <li>
+        <router-link :to="{name: 'tag'}">第三章 vue基本语法与less使用例</router-link>
+      </li>
     </ul>
   </div>
 </template>

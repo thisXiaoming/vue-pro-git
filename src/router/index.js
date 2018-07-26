@@ -11,9 +11,10 @@ const VueRouterPage = resolve => require(['../views/vue-router-eg/vue-router-eg.
 const Book1 = resolve => require(['../views/vue-router-eg/book1/book1.vue'], resolve)
 const Book2 = resolve => require(['../views/vue-router-eg/book2/book2.vue'], resolve)
 const flexEg = resolve => require(['../views/flex-eg/flex-eg.vue'], resolve)
+const tag = resolve => require(['../views/tag-eg/tag-eg.vue'], resolve)
 
 export default new Router({
-  mode: 'history',//使用history模式，去掉url中自带的井号。
+  mode: 'history',//使用history模式，去掉url中自带的#号。
   routes: [
     {
       path: '/',
@@ -41,6 +42,11 @@ export default new Router({
       path: '/flex-eg',
       component: flexEg,
       name: 'flexEg'
+    },
+    {
+      path: '/tag-eg',
+      component: tag,
+      name: 'tag'
     }
   ]
 })
