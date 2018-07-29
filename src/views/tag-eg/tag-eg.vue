@@ -1,5 +1,5 @@
 <template>
-    <tag>文案文案</tag>
+    <tag :tagType="type" v-on:change="active">文案文案</tag>
 </template>
 
 <script>
@@ -10,8 +10,19 @@ export default {
     },
     data() {
         return {
-            
+           type: "normal" 
         }
     },
+    methods: {
+        active: function() {
+            console.log("aaaaaaaa")
+            if (this.type == 'normal') {
+                this.type = 'active'                
+            } else if (this.type == "active") {
+                this.type = 'normal'
+            }
+            // this.$emit('change')
+        }
+    }
 }
 </script>
