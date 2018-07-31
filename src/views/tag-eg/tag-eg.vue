@@ -22,11 +22,12 @@ export default {
     methods: {
         active: function() {
             if (this.type == 'normal') {
-                this.type = 'active'                
+                this.type = 'active'  
+                this.$store.dispatch('setTagMessage', 'selected')                              
             } else if (this.type == "active") {
                 this.type = 'normal'
+                this.$store.dispatch('setTagMessage', 'hello')                
             }
-            this.$store.dispatch('setTagMessage', 'world')
             // this.$emit('change')
         }
     }
