@@ -1,9 +1,10 @@
 <template>
-    <tag :tagType="type" v-on:change="active">文案文案</tag>
+    <tag :tagType="type" v-on:change="active">{{tagMessage}}</tag>
 </template>
 
 <script>
 import Tag from "../../components/tag/tag.vue"
+import { mapGetters } from 'vuex';
 export default {
     components: {
         Tag
@@ -13,14 +14,19 @@ export default {
            type: "normal" 
         }
     },
+    computed: {
+        ...mapGetters({
+            tagMessage: 'tagMessage',
+        }),
+    },
     methods: {
         active: function() {
-            console.log("aaaaaaaa")
             if (this.type == 'normal') {
                 this.type = 'active'                
             } else if (this.type == "active") {
                 this.type = 'normal'
             }
+            this.$store.dispatch('setTagMessage', 'world')
             // this.$emit('change')
         }
     }
