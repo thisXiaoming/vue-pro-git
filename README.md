@@ -84,3 +84,51 @@ require('postcss-px2rem')({
 ###第三章的vue中
 此章节涉及了vue的主要语法用法，这是一个tag的组件，可以设置tag的标签样式，通过设置tag-eg.vue中的type可以随时更改component中的tag组件的样式，包含 normal, disabled, small, active四种样式；通过设置tag-eg.vue中的change事件来控制tag组件的点击事件；
 并且加入了vuex，来控制tag标签文案的变化。
+
+####配置vuex并使用
+1. 安装vuex: npm install --save-dev vuex
+2. 在src目录下创建store文件夹
+3. store文件夹下文件 index.js,state.js,getters.js,mutations.js,actions.js
+
+index.js文件中需要引入vue 和 vuex,这个文件是主要的vue文件配置
+```
+import Vue from 'vue';
+import Vuex from 'vuex';
+import state from './state.js';
+import getters from './getters.js';
+import mutations from './mutations.js';
+import actions from './acions.js';
+
+Vue.use(Vuex);
+const store = new Vuex.Store({
+    state,
+    getters,
+    actions,
+    mutations
+}) 
+
+export default store;
+```
+
+4. 在src文件夹下的入口js文件main.js中引入输出的store
+```
+import store from './store/index.js'
+```
+并在Vue对象中加入store的配置
+```
+new Vue({
+  el: '#app',
+  router,
+  store,//加入sotre的配置
+  render: h => h(App)
+})
+```
+5.  解释：
+在state.js中设置状态值tagMessage;
+在constants.js中设置状态值的常量；
+在mutations.js中设置函数来为状态值的常量赋值，从而改变状态值，但是此时state的状态值还没有改变；
+acions设置函数，使用commit来提交mutations中状态值的改变，但是此时state的状态值还是没有改变，需要通过$dispatch来分配actions；
+getters.js中返回了状态值，在vue文件中通过引入mapGetters使用this来调用此state的状态值；
+可以在vue文件中通过this.$store.dispatch来分配actions，从而完成state的commit提交，进一步进行状态值state的改变。
+
+
