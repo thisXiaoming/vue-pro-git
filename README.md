@@ -80,3 +80,7 @@ require('postcss-px2rem')({
 原理解释： [rem原理](https://www.cnblogs.com/this-xiaoming/p/9056607.html)
 
 配置参考: [postcss-px2rem安装配置](https://www.npmjs.com/package/postcss-px2rem)
+
+#第三章的vue中
+此章节涉及了vue的主要语法用法，这是一个tag的组件，可以设置tag的标签样式，通过设置tag-eg.vue中的type可以随时更改component中的tag组件的样式，包含 normal, disabled, small, active四种样式；通过设置tag-eg.vue中的change事件来控制tag组件的点击事件；
+并且加入了vuex，来控制tag标签文案的变化。
