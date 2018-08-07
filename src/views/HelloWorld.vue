@@ -10,7 +10,10 @@
         <router-link :to="{name:'flexEg'}">第二章  flex布局例</router-link>
       </li>
       <li>
-        <router-link :to="{name: 'tag'}">第三章 vue基本语法与less使用例</router-link>
+        <router-link :to="{name: 'tag'}">第三章 vue基本语法与less使用例加之vuex的使用</router-link>
+      </li>
+      <li>
+        <router-link :to="{name: 'hook'}">第四章 vue生命周期钩子加实例详解</router-link>
       </li>
     </ul>
   </div>

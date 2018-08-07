@@ -12,6 +12,7 @@ const Book1 = resolve => require(['../views/vue-router-eg/book1/book1.vue'], res
 const Book2 = resolve => require(['../views/vue-router-eg/book2/book2.vue'], resolve)
 const flexEg = resolve => require(['../views/flex-eg/flex-eg.vue'], resolve)
 const tag = resolve => require(['../views/tag-eg/tag-eg.vue'], resolve)
+const lifecycleHook = resolve => require(['../views/lifecycle-hook/hook-eg.vue'], resolve)
 
 export default new Router({
   mode: 'history',//使用history模式，去掉url中自带的#号。
@@ -47,6 +48,11 @@ export default new Router({
       path: '/tag-eg',
       component: tag,
       name: 'tag'
+    },
+    {
+      path: '/lifecycle-hook',
+      component: lifecycleHook,
+      name: 'hook'
     }
   ]
 })
