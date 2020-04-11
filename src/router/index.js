@@ -13,6 +13,7 @@ const Book2 = resolve => require(['../views/vue-router-eg/book2/book2.vue'], res
 const flexEg = resolve => require(['../views/flex-eg/flex-eg.vue'], resolve)
 const tag = resolve => require(['../views/tag-eg/tag-eg.vue'], resolve)
 const lifecycleHook = resolve => require(['../views/lifecycle-hook/hook-eg.vue'], resolve)
+const slider = resolve => require(['../views/slider-eg/slider-eg.vue'],resolve)
 
 export default new Router({
   mode: 'history',//使用history模式，去掉url中自带的#号。
@@ -53,6 +54,11 @@ export default new Router({
       path: '/lifecycle-hook',
       component: lifecycleHook,
       name: 'hook'
+    },
+    {
+      path: '/slider-eg',
+      component: slider,
+      name: 'slider'
     }
   ]
 })
