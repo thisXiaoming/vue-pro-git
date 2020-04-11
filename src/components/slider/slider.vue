@@ -1,8 +1,8 @@
 <template>
     <div class="slider">
-        <div class="slider-mask" :style="{height:sHeight}">
+        <div class="slider-mask">
             <div class="slider-inner" :style="{width:sWidth}">
-                111111111111
+                <slot></slot>
             </div>
         </div>
     </div>
@@ -13,22 +13,33 @@
         name: 'Slider',
         data() {
             return {
-                sWidth: '60%',
-                sHeight: '796px',
+                sWidth: '60%'
             }
         }
     }
 </script>
 
 <style lang="less" scoped>
-    .slider-mask {
-        background: #ddd;
-        z-index: 100
-    }
-    .slider-inner {
-        background: #ccc;
-        z-index: 200;
-        height: 100%
+    .slider {
+        width: 100%;
+        height: 100%;
+        .slider-mask {
+            position: relative;
+            background: #ccc;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+        }
+        .slider-inner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background: #ddd;
+            z-index: 200;
+            transform: translate3d(0px, 0px, 0px);
+            transition: all 0.2s ease-out 0s;
+        }
     }
 </style>
 
