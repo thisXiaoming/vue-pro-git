@@ -1,8 +1,13 @@
 <template>
     <div class="slider-eg">
-        <slider>
-            <div class="slider-content"></div>
-        </slider>
+        <div>我是外层内容</div>
+        <Slider>
+            <div class="slider-content">
+                11111
+                <div class="content">22222222</div>
+            </div>
+        </Slider>
+        <div>我是下面内容</div>
     </div>
 </template>
 
@@ -19,10 +24,8 @@
     .slider-eg{
         width: 900px;
         height: 900px;
-        .slider-content {
-            width: 100px;
-            height: 100px;
-            background-color: #333;
+        .content {
+            color: #ddd;
         }
     }
 

@@ -1,10 +1,14 @@
 <template>
     <div class="slider">
-        <div class="slider-mask">
-            <div class="slider-inner" :style="{width:sWidth}">
+        <button @click="isOpen = !isOpen">点击</button>
+        <transition name="inner">
+            <div class="slider-inner" :style="{width:sWidth}" v-show="isOpen">
                 <slot></slot>
             </div>
-        </div>
+        </transition>
+        <transition name="mask">
+            <div class="slider-mask" @click="isOpen = false" v-show="isOpen"></div>
+        </transition>
     </div>
 </template>
 
@@ -13,32 +17,52 @@
         name: 'Slider',
         data() {
             return {
-                sWidth: '60%'
+                sWidth: '60%',
+                isOpen: false
             }
         }
     }
 </script>
 
 <style lang="less" scoped>
+    button {
+        cursor: pointer;
+    }
     .slider {
-        width: 100%;
-        height: 100%;
         .slider-mask {
-            position: relative;
+            position: absolute;
+            top: 0;
             background: #ccc;
-            z-index: 100;
+            z-index: 99;
             width: 100%;
             height: 100%;
+            opacity: 0.5;
         }
         .slider-inner {
             position: absolute;
             top: 0;
             right: 0;
             height: 100%;
-            background: #ddd;
-            z-index: 200;
-            transform: translate3d(0px, 0px, 0px);
-            transition: all 0.2s ease-out 0s;
+            background: #cbb;
+            z-index: 101;
+        }
+        .inner-enter-active {
+            transition: all .3s ease;
+        }
+        .inner-leave-active {
+            transition: all .3s ease-out;
+        }
+        .inner-enter, .inner-leave-to {
+            transform: translate3d(100%, 0, 0);
+        }
+        .mask-enter-active {
+            transition: all .3s ease;
+        }
+        .mask-leave-active {
+            transition: all .3s ease-out;
+        }
+        .mask-enter, .mask-leave-to {
+            opacity: 0;
         }
     }
 </style>

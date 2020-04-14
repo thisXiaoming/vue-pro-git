@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h3>welcome to My Vue Issues</h3>
+    <h3>Welcome to My Vue Issues</h3>
     <ul class="chapter-container">
       <li>
         <router-link :to="{name:'VueRouterPage'}">第一章  vue-router的简单配置例</router-link>
@@ -15,7 +15,7 @@
         <router-link :to="{name: 'hook'}">第四章 vue生命周期钩子加实例详解</router-link>
       </li>
       <li>
-        <router-link :to="{name: 'slider'}">第五章 slider侧边栏初始化</router-link>
+        <router-link :to="{name: 'slider'}">第五章 UI组件--含有slider滑动侧边栏的按钮</router-link>
       </li>
     </ul>
   </div>
@@ -36,6 +36,9 @@ export default {
 <style lang="less" scoped>
   .hello {
     font-size: 16px;/*!px*/
+  }
+  h3 {
+    text-align: center;
   }
   ul {
     list-style-type: none;
