@@ -2,7 +2,7 @@
   "name": "vue-pro-git",
   "version": "1.0.0",
   "description": "my vue pro",
-  "author": "wnn",
+  "author": "xiaoming",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
