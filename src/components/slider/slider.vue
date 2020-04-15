@@ -1,8 +1,8 @@
 <template>
     <div class="slider">
-        <button @click="isOpen = !isOpen">点击</button>
-        <transition name="inner">
-            <div class="slider-inner" :style="{width:sWidth}" v-show="isOpen">
+        <button @click="isOpen = !isOpen">{{sliderObj.btnText}}</button>
+        <transition name="inner" :enter-class="innerCls.enter" :leave-to-class="innerCls.leaveTo">
+            <div class="slider-inner" :class="positionCls" :style="{width:sliderObj.innerWidth || '60%'}" v-show="isOpen">
                 <slot></slot>
             </div>
         </transition>
@@ -15,10 +15,32 @@
 <script>
     export default{
         name: 'Slider',
+        props: {
+            sliderObj: Object
+        },
         data() {
             return {
-                sWidth: '60%',
-                isOpen: false
+                isOpen: false,
+                direction: this.sliderObj.direction || ''
+            }
+        },
+        computed: {
+            innerCls() {
+                let directionArr = ['left','right','top','bottom'];
+                let direction = directionArr.indexOf(this.direction) > -1 ? this.direction : 'right';
+                console.log("direction: ",direction)
+                return {
+                    enter: 'inner-' + direction + '-enter',
+                    leaveTo: 'inner-' + direction + '-leave-to'
+                }
+            },
+            positionCls() {
+                switch(this.direction) {
+                    case 'left' : return {'left-position' : true};
+                    case 'top' : return {'top-position' : true};
+                    case 'bottom' : return {'bottom-position' : true};
+                    default : return {'right-position' : true};
+                }
             }
         }
     }
@@ -40,20 +62,39 @@
         }
         .slider-inner {
             position: absolute;
-            top: 0;
-            right: 0;
             height: 100%;
             background: #cbb;
             z-index: 101;
         }
+        .right-position, .top-position {
+            top: 0;
+            right: 0;
+        }
+        .left-position {
+            top: 0;
+            left: 0;
+        }
+        .bottom-position {
+            bottom: 0;
+            right: 0;
+        }
         .inner-enter-active {
-            transition: all .3s ease;
+            transition: all .5s ease;
         }
         .inner-leave-active {
             transition: all .3s ease-out;
         }
-        .inner-enter, .inner-leave-to {
+        .inner-right-enter, .inner-right-leave-to {
             transform: translate3d(100%, 0, 0);
+        }
+        .inner-left-enter, .inner-left-leave-to {
+            transform: translate3d(-100%, 0, 0);
+        }
+        .inner-top-enter, .inner-top-leave-to {
+            transform: translate3d(0, -100%, 0);
+        }
+        .inner-bottom-enter, .inner-bottom-leave-to {
+            transform: translate3d(0, 100%, 0);
         }
         .mask-enter-active {
             transition: all .3s ease;
